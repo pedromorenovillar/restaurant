@@ -31,4 +31,4 @@ function clearContent() {
 }
 
 clearContent()
-menuLoad()
+pageLoad()
