@@ -2,21 +2,17 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "production",
   entry: "./src/index.js",
-
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-  },
-
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
   ],
-
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
   module: {
     rules: [
       // CSS
@@ -37,11 +33,5 @@ module.exports = {
         type: "asset/resource",
       },
     ],
-  },
-
-  devtool: "eval-source-map",
-
-  devServer: {
-    watchFiles: ["./src/template.html"],
   },
 };

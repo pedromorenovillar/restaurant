@@ -42,3 +42,26 @@ This project demonstrates:
 - **HTML Webpack Plugin** - Template injection
 - **CSS & Style Loaders** - CSS bundling
 - **HTML Loader** - HTML asset support
+
+
+## Build Setup
+
+This project uses **split Webpack configurations** following best practices from webpack-merge:
+
+```
+webpack.common.js   # Shared config (entry, output, loaders, plugins)
+webpack.dev.js      # Development-only settings (devServer, source maps)
+webpack.prod.js     # Production build settings
+```
+
+### Available Scripts
+
+```
+pnpm start      # Launches webpack-dev-server using webpack.dev.js
+pnpm run build  # Creates a production build using webpack.prod.js
+```
+
+### Notes on HtmlWebpackPlugin
+
+The HTML template is generated from `src/template.html`.
+No dynamic `<title>` is injected with HtmlWebpackPlugin — the title is managed directly inside the template for simplicity.
